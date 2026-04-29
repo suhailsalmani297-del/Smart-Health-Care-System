@@ -1,0 +1,273 @@
+/* ContactDoctor Component Styles */
+
+.contact-container {
+    padding: 24px;
+    background: white;
+    border-radius: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.contact-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.contact-subtitle {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.contact-section {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+/* Doctor Select */
+.doctor-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.doctor-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Subject Input */
+.subject-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.subject-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Message Input */
+.message-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.2s ease;
+}
+
+.message-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Contact Info */
+.contact-info {
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* Send Button */
+.send-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.send-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Success Card */
+.success-card {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e6f7e6 100%);
+    border-radius: 20px;
+    animation: slideUp 0.5s ease;
+}
+
+.success-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.success-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #16a34a;
+    margin-bottom: 20px;
+}
+
+.success-details {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.success-details p {
+    margin: 8px 0;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+.success-details strong {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.success-message {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+/* Chat History */
+.chat-history {
+    margin-top: 32px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 24px;
+}
+
+.chat-message {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.chat-message:hover {
+    background: #f1f5f9;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.chat-subject {
+    font-size: 13px;
+    font-weight: 500;
+    color: #3b82f6;
+    margin-bottom: 8px;
+}
+
+.chat-text {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar */
+.contact-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.contact-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.contact-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.contact-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 16px;
+    }
+
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .success-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .success-details {
+        padding: 16px;
+    }
+
+    .chat-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+}

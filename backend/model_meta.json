@@ -1,0 +1,30 @@
+{
+  "accuracy": 0.9,
+  "f1_score": 0.901,
+  "roc_auc": 1.0,
+  "features": [
+    "age",
+    "gender",
+    "bmi",
+    "daily_steps",
+    "sleep_hours",
+    "water_intake_l",
+    "calories_consumed",
+    "smoker",
+    "alcohol",
+    "resting_hr",
+    "systolic_bp",
+    "diastolic_bp",
+    "cholesterol",
+    "family_history",
+    "bmi_category",
+    "pulse_pressure",
+    "activity_score",
+    "sleep_quality",
+    "hypertension",
+    "high_cholesterol",
+    "risk_score"
+  ],
+  "n_features": 21,
+  "model_type": "RandomForestClassifier"
+}
