@@ -73,9 +73,27 @@ export default function DoctorList({ setPage, setSelectedDoctor }) {
   const [sortBy, setSortBy] = useState("rating");
 
   const getCombinedDoctors = () => {
+    // Get doctors from registration storage
     const registered = JSON.parse(localStorage.getItem('shs_d') || '[]');
-    const staticDocs = DOCTORS.filter(sd => !registered.some(rd => rd.email === sd.email));
-    const formattedRegistered = registered.map(d => ({
+    // Get doctors from portal updates (when they save profile)
+    const doctorPortalUpdates = JSON.parse(localStorage.getItem('shs_doctors') || '[]');
+    
+    // Merge registered with portal updates (portal updates take precedence)
+    const mergedDocs = registered.map(reg => {
+      const updated = doctorPortalUpdates.find(d => d.email === reg.email);
+      return updated ? { ...reg, ...updated } : reg;
+    });
+    
+    // Add any new doctors from portal that aren't in registered
+    doctorPortalUpdates.forEach(d => {
+      if (!mergedDocs.some(m => m.email === d.email)) {
+        mergedDocs.push(d);
+      }
+    });
+    
+    const staticDocs = DOCTORS.filter(sd => !mergedDocs.some(md => md.email === sd.email));
+    
+    const formattedRegistered = mergedDocs.map(d => ({
       ...d,
       hospital: d.hospital || "SmartCare Hospital",
       city: d.city || "Mumbai",

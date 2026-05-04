@@ -43,8 +43,11 @@ export default function ProfileView({ doctor, updateDoctor, addToast }) {
               <input type="text" name="degree" value={formData.degree} onChange={handleChange} placeholder="e.g. MBBS, MD (Cardiology)" style={{ width: '100%', padding: '12px 16px', borderRadius: 12, border: '1px solid #e2e8f0', outline: 'none' }} />
             </div>
             <div className="form-group">
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, fontWeight: 600, color: '#475569' }}>Specialization</label>
-              <input type="text" name="spec" value={formData.spec} onChange={handleChange} placeholder="e.g. Cardiologist" style={{ width: '100%', padding: '12px 16px', borderRadius: 12, border: '1px solid #e2e8f0', outline: 'none' }} />
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, fontWeight: 600, color: '#475569' }}>Specialization (Cannot be changed)</label>
+              <div style={{ width: '100%', padding: '12px 16px', borderRadius: 12, border: '1px solid #e2e8f0', background: '#f8fafc', color: '#64748b', fontSize: 14, fontWeight: 600 }}>
+                {formData.spec || 'Not specified'}
+              </div>
+              <p style={{ fontSize: 12, color: '#94a3b8', marginTop: 6 }}>Your specialization is set during registration and cannot be modified.</p>
             </div>
             <div className="form-group">
               <label style={{ display: 'block', marginBottom: 8, fontSize: 14, fontWeight: 600, color: '#475569' }}>Experience (Years)</label>

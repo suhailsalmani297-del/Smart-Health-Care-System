@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../AuthContext'
-import BackButton from '../components/BackButton'
 
 export default function Home() {
   const navigate = useNavigate()
@@ -61,7 +60,7 @@ export default function Home() {
               <div className="hero-btns">
                 <button className="btn-primary" onClick={handleGetStarted}>Get Started Free</button>
                 <button className="btn-secondary" onClick={handleSignIn}>Sign In</button>
-                <button className="btn-ghost" onClick={() => navigate('/login')} style={{ border: '1px solid #e2e8f0', background: 'white' }}>Doctor Portal</button>
+                <button className="btn-ghost" onClick={() => navigate('/login')}>Doctor Portal</button>
               </div>
               <div className="hero-stats">
                 <div className="stat"><div className="stat-num">50K+</div><div className="stat-lbl">Patients</div></div>
@@ -130,7 +129,8 @@ export default function Home() {
           <button className="btn-cta" onClick={handleGetStarted}>Create Free Account</button>
         </section>
 
-        <BackButton />
+
+
         <footer>
           <div className="f-logo">Smart Healthcare System</div>
           <div className="f-copy">© 2025 Smart Healthcare System. All rights reserved.</div>

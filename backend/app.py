@@ -41,7 +41,7 @@ def load_model():
     global model_pkg, model_meta
     mp = os.path.abspath(MODEL_PATH)
     if not os.path.exists(mp):
-        print(f"⚠  Model file not found at {mp}")
+        print(f"Warning: Model file not found at {mp}")
         print("   Run:  python model/train_model.py  first.")
         return
     with open(mp, "rb") as f:
@@ -49,7 +49,7 @@ def load_model():
     if os.path.exists(META_PATH):
         with open(os.path.abspath(META_PATH)) as f:
             model_meta = json.load(f)
-    print(f"✅  Model loaded — accuracy: {model_meta.get('accuracy', '?')}")
+    print(f"Model loaded - accuracy: {model_meta.get('accuracy', '?')}")
 
 load_model()
 
@@ -342,7 +342,7 @@ def chatbot():
 # ────────────────────────────────────────────────
 if __name__ == "__main__":
     print("\n" + "=" * 50)
-    print("  Health Risk Prediction — Flask API")
+    print("  Health Risk Prediction - Flask API")
     print("  http://127.0.0.1:5000")
     print("=" * 50 + "\n")
     app.run(debug=True, host="0.0.0.0", port=5000)

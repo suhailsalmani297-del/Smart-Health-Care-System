@@ -67,9 +67,9 @@ export default function Appointments({ user, addToast }) {
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 99px; }
       `}</style>
       <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", background: T.bg, minHeight: "100vh", padding: "20px" }}>
-        <NavTabs active={page} onTabChange={(p) => { setPage(p); if(p !== "chat") setSelectedDoctor(null); }} />
-        
-        {page === "list"    && <DoctorList setPage={setPage} setSelectedDoctor={setSelectedDoctor} />}
+        <NavTabs active={page} onTabChange={(p) => { setPage(p); if (p !== "chat") setSelectedDoctor(null); }} />
+
+        {page === "list" && <DoctorList setPage={setPage} setSelectedDoctor={setSelectedDoctor} />}
         {page === "details" && <DoctorDetails doctor={selectedDoctor} user={user} setPage={setPage} addAppointment={addAppointment} />}
         {page === "history" && <AppointmentHistory appointments={appointments} setPage={setPage} setSelectedDoctor={setSelectedDoctor} />}
         {page === "notifications" && <NotificationsHistory user={user} />}
